@@ -1,0 +1,71 @@
+name: Relatar um Bug
+description: Reporte falhas, erros de execução ou comportamentos inesperados.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo com o máximo de detalhes possível para agilizar a reprodução e correção do problema.
+
+  - type: input
+    id: version
+    attributes:
+      label: Versão do Projeto
+      description: Informe a tag, release ou hash do commit em que o erro ocorreu.
+      placeholder: "ex: v1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Ambiente / Sistema Operacional
+      options:
+        - Linux
+        - Windows
+        - macOS
+        - Servidor Web (Nginx / Apache)
+        - Docker / Container
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Problema
+      description: O que aconteceu e qual era o comportamento esperado?
+      placeholder: "Ao executar a ação X, o sistema retorna erro Y em vez de..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Passos para Reproduzir
+      description: Liste a sequência exata para reproduzir o bug.
+      value: |
+        1. Configure '...'
+        2. Execute '...'
+        3. Veja o erro em '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou Mensagens de Erro
+      description: Cole o stack trace ou saída do terminal (será formatado automaticamente como código).
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Verificação Prévia
+      options:
+        - label: Pesquisei nas Issues abertas e fechadas para confirmar que este bug ainda não foi reportado.
+          required: true
+        - label: Testei na versão mais recente disponível na branch principal ou última release.
+          required: true
