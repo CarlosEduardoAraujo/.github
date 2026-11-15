@@ -23,3 +23,10 @@ labels: bug, triage
 3. Veja o erro em '...'
 
 ## Logs ou Mensagens de Erro
+```text
+Cole aqui o stack trace ou saída do terminal (remova senhas, tokens ou IPs privados)
+```
+
+## Verificação Prévia
+- [ ] Pesquisei nas Issues abertas e fechadas para confirmar que este bug ainda não foi reportado.
+- [ ] Testei na versão mais recente disponível na branch principal ou última release.
